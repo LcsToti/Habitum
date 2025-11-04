@@ -1,15 +1,20 @@
-﻿services:
+services:
   api:
-    build: .
+    build:
+      context: .
     container_name: habitum-api
-    ports:
-      - "5100:8080"
+    restart: always
     environment:
       ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT}
       ConnectionStrings__HabitumContext: ${ConnectionStrings__HabitumContext}
       JwtSettings__SecretKey: ${JwtSettings__SecretKey}
       JwtSettings__Issuer: ${JwtSettings__Issuer}
       JwtSettings__Audience: ${JwtSettings__Audience}
+    networks:
+      - db-network
+      - npm-network
+    expose:
+      - "8080" # Apenas exposta internamente
     depends_on:
       migrator:
         condition: service_completed_successfully
@@ -21,8 +26,6 @@
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: habitum
-    ports:
-      - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
     healthcheck:
@@ -30,18 +33,29 @@
       interval: 5s
       timeout: 10s
       retries: 20
-      
+    networks:
+      - db-network
+
   migrator:
     build:
       context: .
       target: build
     container_name: habitum-migrator
-    depends_on:
-      db:
-        condition: service_healthy
     environment:
       ConnectionStrings__HabitumContext: ${ConnectionStrings__HabitumContext}
     command: ["dotnet", "ef", "database", "update"]
+    networks:
+      - db-network
+    depends_on:
+      db:
+        condition: service_healthy
     
+networks:
+  npm-network:
+    external: true
+    name: npm-data_default
+  db-network:
+    driver: bridge
+
 volumes:
   mysql_data:
