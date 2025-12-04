@@ -12,7 +12,7 @@ services:
       JwtSettings__Audience: ${JwtSettings__Audience}
     networks:
       - db-network
-      - npm-network
+      - npm-data_default
     expose:
       - "8080" # Apenas exposta internamente
     depends_on:
@@ -51,9 +51,8 @@ services:
         condition: service_healthy
     
 networks:
-  npm-network:
+  npm-data_default:
     external: true
-    name: npm-data_default
   db-network:
     driver: bridge
 
