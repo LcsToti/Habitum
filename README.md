@@ -27,10 +27,6 @@ Para ver a aplicação móvel, clique aqui
 
 <img width="1446" height="671" alt="Captura de tela 2025-10-31 180343" src="https://github.com/user-attachments/assets/9347f172-f8e0-42ea-bdde-5bd58ff409a0" />
 
-## 📋 Instruções de utilização
-
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
-
 # Documentação
 
 <ol>
