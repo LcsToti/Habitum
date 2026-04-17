@@ -12,28 +12,46 @@ O app é voltado para adolescentes e jovens adultos que querem mais disciplina, 
 
 ## Tecnologias Utilizadas
 
-#### Front-end (Mobile)
-- **Linguagem:** JavaScript / TypeScript  
-- **Framework:** React Native, Expo  
+### Frontend
 
-#### Back-end
-- **Linguagem:** C#  
-- **Framework:** ASP.NET Core Web API  
-- **Padrões e práticas:** RESTful API, Entity Framework Core (ORM), Princípios SOLID
+![Expo](https://img.shields.io/badge/expo-1C1E24?style=for-the-badge&logo=expo&logoColor=#D04A37)
+![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-#### Banco de Dados
-- **SGBD:** MySQL  
-- **Ferramenta:** MySQL Workbench
+### Backend
 
-#### Serviços Web / Integrações
-- API REST entre front-end e back-end
-- Hospedagem futura: Azure
+![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white)
+![.Net](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white)
+![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 
-#### Ambientes e Ferramentas de Desenvolvimento
-- **IDE Front-end:** Visual Studio Code  
-- **IDE Back-end:** Visual Studio 2022
-- **Gerenciador de pacotes:** npm (front-end), NuGet (back-end)  
-- **Controle de versão:** Git + GitHub
+## Arquitetura
+
+A aplicação segue uma arquitetura cliente-servidor, composta por três partes principais: aplicativo mobile, API e banco de dados.
+
+O funcionamento ocorre da seguinte forma:
+
+1. O aplicativo mobile envia requisições HTTP para a API
+2. A API processa a lógica da aplicação
+3. Os dados são armazenados e consultados no banco de dados
+4. A API retorna uma resposta em formato JSON
+5. O aplicativo exibe as informações para o usuário
+
+```
+[ App Mobile ] ⇄ [ API ] ⇄ [ Banco de Dados ]
+```
+
+### Backend
+
+O backend é organizado em módulos para separar responsabilidades:
+
+- **Features**: A ngrupam as funcionalidades da aplicação (contendo **DTOs**, **Interfaces**, **Services**, **Repositories** e **Controllers**)
+- **Models**: representam as entidades do sistema e a estrutura dos dados
+- **Exceptions**: definem erros personalizados da aplicação
+- **Extensions**: centralizam configurações e extensões utilizadas no projeto
+
+Essa organização mantém o código modular, facilitando manutenção e evolução do sistema.
 
 # Instruções de utilização
 
