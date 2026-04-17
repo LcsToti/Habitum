@@ -1,46 +1,99 @@
-# 🔁 Habitum API
+<img width="2856" height="600" alt="image" src="https://github.com/user-attachments/assets/e0b99889-5039-4f16-99a4-0aa6553d75f2" />
 
-<img width="2856" height="900" alt="508380376-97dc1897-b43d-4ea0-9724-45ab1b2c5539" src="https://github.com/user-attachments/assets/85026ff5-f4a1-486f-91bd-b3798179a759" />
-
-`Jan/25 - Jun/25`
-
-`C#, .NET, Entity Framework, MySQL, Azure, Oracle`
+# 🔁 Habitum (API)
 
 O projeto **Habitum** é um aplicativo que ajuda a criar e manter hábitos saudáveis, reduzindo a procrastinação com lembretes, monitoramento de progresso e recompensas gamificadas. 
 Ele transforma a construção de hábitos em uma experiência envolvente, tornando a rotina mais produtiva e motivadora. 
 O app é voltado para adolescentes e jovens adultos que querem mais disciplina, mas enfrentam dificuldades com distrações e falta de constância.
-Este repositório corresponde somente à API (no caso, servidor) do sistema.
 
-Para ver a aplicação móvel, clique aqui
+⚠️ Este repositório inclui somente a API do sistema.
 
-🔗 [Acesse AQUI!](https://habitumAPI.lcstoti.dev/)
+**CONFIRA** 🎬 [Vídeo de Apresentação - 1 minuto](https://youtu.be/Lhrk6t1Eofo)
 
-📋 [Tutorial de Configuração do Projeto Para Uso Local](https://github.com/LcsToti/Habitum/edit/main/README.md#-instru%C3%A7%C3%B5es-de-utiliza%C3%A7%C3%A3o)
+## Tecnologias Utilizadas
 
-# 🖼️ Galeria
+#### Front-end (Mobile)
+- **Linguagem:** JavaScript / TypeScript  
+- **Framework:** React Native, Expo  
 
-<img width="1468" height="824" alt="Captura de tela 2025-10-31 180328" src="https://github.com/user-attachments/assets/dc46392a-0227-465c-8ea7-7f55b7a52de6" />
+#### Back-end
+- **Linguagem:** C#  
+- **Framework:** ASP.NET Core Web API  
+- **Padrões e práticas:** RESTful API, Entity Framework Core (ORM), Princípios SOLID
 
-<img width="1445" height="775" alt="Captura de tela 2025-10-31 180331" src="https://github.com/user-attachments/assets/6225a7cc-aadd-4a65-8ee6-2c8ac94de308" />
+#### Banco de Dados
+- **SGBD:** MySQL  
+- **Ferramenta:** MySQL Workbench
 
-<img width="1451" height="825" alt="Captura de tela 2025-10-31 180337" src="https://github.com/user-attachments/assets/d5c8a199-acbe-4322-9f89-92a8515f0676" />
+#### Serviços Web / Integrações
+- API REST entre front-end e back-end
+- Hospedagem futura: Azure
 
-<img width="1446" height="671" alt="Captura de tela 2025-10-31 180343" src="https://github.com/user-attachments/assets/9347f172-f8e0-42ea-bdde-5bd58ff409a0" />
+#### Ambientes e Ferramentas de Desenvolvimento
+- **IDE Front-end:** Visual Studio Code  
+- **IDE Back-end:** Visual Studio 2022
+- **Gerenciador de pacotes:** npm (front-end), NuGet (back-end)  
+- **Controle de versão:** Git + GitHub
 
-# Documentação
+# Instruções de utilização
 
-<ol>
-  <li><a href="docs/01-Documentação de Contexto.md"> Documentação de Contexto</a></li>
-  <li><a href="docs/02-Especificação do Projeto.md"> Especificação do Projeto</a></li>
-  <li><a href="docs/03-Metodologia.md"> Metodologia</a></li>
-  <li><a href="docs/04-Projeto de Interface.md"> Projeto de Interface</a></li>
-  <li><a href="docs/05-Arquitetura da Solução.md"> Arquitetura da Solução</a></li>
-  <li><a href="docs/06-Template Padrão da Aplicação.md"> Template Padrão da Aplicação</a></li>
-  <li><a href="docs/07-Programação de Funcionalidades.md"> Programação de Funcionalidades</a></li>
-  <li><a href="docs/08-Plano de Testes de Software.md"> Plano de Testes de Software</a></li>
-  <li><a href="docs/09-Registro de Testes de Software.md"> Registro de Testes de Software</a></li>
-  <li><a href="docs/10-Plano de Testes de Usabilidade.md"> Plano de Testes de Usabilidade</a></li>
-  <li><a href="docs/11-Registro de Testes de Usabilidade.md"> Registro de Testes de Usabilidade</a></li>
-  <li><a href="docs/12-Apresentação do Projeto.md"> Apresentação do Projeto</a></li>
-  <li><a href="docs/13-Referências.md"> Referências</a></li>
-</ol>
+### ✅ Pré-requisitos
+
+- **.NET 9 SDK** (Preview): https://dotnet.microsoft.com/en-us/download/dotnet/9.0
+- **MySQL 8.0+**
+- (Opcional) **MySQL Workbench**
+- **Git**
+- (Opcional) **Visual Studio** ou VS Code com extensão C#
+
+---
+
+### 1. Clonar o repositório:
+
+```bash
+git clone https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e3-proj-mov-t4-habitum
+cd pmv-ads-2025-1-e3-proj-mov-t4-habitum/src/habitumAPI
+```
+
+---
+
+### 2. Editar o arquivo `appsettings.json`:
+
+```json
+{
+  "ConnectionStrings": {
+    "HabitumContext": "Server=localhost;Port=3306;Database=habitum;User=root;Password=root;"
+  }
+}
+```
+
+> Altere `User` e `Password` conforme seu MySQL local. Se não for usar banco local, ajuste também `Server` e `Port`.
+
+---
+
+### 3. Aplicar Migrations:
+
+> ⚠️ Se o `appsettings.json` não estiver corretamente configurado, este passo falhará.
+
+**Com Visual Studio (Console NuGet):**
+
+```powershell
+Update-Database
+```
+
+**Ou no terminal:**
+
+```bash
+dotnet ef database update
+```
+
+---
+
+### 4. Rodar o back-end:
+
+```bash
+dotnet run --launch-profile "dev"
+```
+
+> Acesse via Swagger em:  
+> `https://localhost:5100/` (HTTPS)  
+> ou `http://192.168.0.100:5100/` (HTTP, substitua o "192.168.0.100" pelo IP real da máquina)
