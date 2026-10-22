@@ -8,7 +8,7 @@ O app é voltado para adolescentes e jovens adultos que querem mais disciplina, 
 
 ⚠️ Este repositório inclui somente a API do sistema.
 
-Link de acesso do Swagger: https://habitum-api.lcstoti.dev
+Link de acesso do Swagger: https://habitum-api.lucastoti.com
 
 **CONFIRA** 🎬 [Vídeo de Apresentação - 1 minuto](https://youtu.be/Lhrk6t1Eofo)
 
